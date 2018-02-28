@@ -1,0 +1,6 @@
+pip install beautifulsoup4
+
+pip install html5lib
+
+
+https://www.crummy.com/software/BeautifulSoup/bs4/doc/
