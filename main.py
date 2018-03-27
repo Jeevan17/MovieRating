@@ -26,6 +26,8 @@ for name in name_box:
 #print name_box
 #print title+url[0]
 temp = {}
+R=[]
+V=[]
 for link in url:
 	quote_page = title+link
 	page = urllib2.urlopen(quote_page)
@@ -37,6 +39,13 @@ for link in url:
 	votes = soup.find('span', attrs={'itemprop' : 'ratingCount'})
 	votes = votes.string
 	print name+"  :"+rating+"  "+votes
+	R.append(rating)
+	V.append(votes)
 	temp[name] = [rating,votes]
 	#print temp
-print temp
+
+R.sort()
+V.sort()
+import matplotlib.pyplot as plt
+plt.plot(R,V,'ro')
+plt.show()
